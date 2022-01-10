@@ -14,4 +14,4 @@ $ npx setup-tailwind-rn
 
 ## Related
 
-- [tailwind-rn](https://github.com/vadimdemedes/tailwind-rn) - Use Tailwind CSS in React Native apps
+- [tailwind-rn](https://github.com/vadimdemedes/tailwind-rn) - Use Tailwind in React Native apps
