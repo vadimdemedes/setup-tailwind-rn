@@ -1,6 +1,6 @@
 {
 	"name": "setup-tailwind-rn",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Add Tailwind to your React Native project",
 	"author": "Vadim Demedes <vadimdemedes@hey.com>",
 	"license": "MIT",
