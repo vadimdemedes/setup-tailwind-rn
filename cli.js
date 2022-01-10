@@ -43,7 +43,7 @@ const tasks = new Listr([
 	{
 		title: 'Create Tailwind config',
 		task: async () => {
-			await execa(useYarn ? 'yarn' : 'npm', ['tailwindcss', 'init']);
+			await execa(useYarn ? 'yarn' : 'npx', ['tailwindcss', 'init']);
 			await fs.default.writeFile('input.css', '@tailwind utilities;\n');
 			await fs.default.writeFile('tailwind.css', '\n');
 			await fs.default.writeFile('tailwind.json', '{}\n');
