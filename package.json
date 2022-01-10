@@ -1,0 +1,38 @@
+{
+	"name": "setup-tailwind-rn",
+	"version": "0.0.0",
+	"description": "Add Tailwind to your React Native project",
+	"author": "Vadim Demedes <vadimdemedes@hey.com>",
+	"license": "MIT",
+	"type": "module",
+	"bin": "cli.js",
+	"scripts": {
+		"test": "xo"
+	},
+	"dependencies": {
+		"chalk": "^5.0.0",
+		"execa": "^6.0.0",
+		"figures": "^4.0.0",
+		"fs-extra": "^10.0.0",
+		"has-yarn": "^3.0.0",
+		"indent-string": "^5.0.0",
+		"json-file-plus": "^3.3.1",
+		"listr": "^0.14.3",
+		"meow": "^10.1.2"
+	},
+	"devDependencies": {
+		"@vdemedes/prettier-config": "^1.0.1",
+		"prettier": "^2.5.1",
+		"xo": "^0.47.0"
+	},
+	"keywords": [
+		"tailwind",
+		"tailwindcss",
+		"tailwind-rn",
+		"react-native"
+	],
+	"prettier": "@vdemedes/prettier-config",
+	"xo": {
+		"prettier": true
+	}
+}
