@@ -27,7 +27,13 @@ const tasks = new Listr([
 		task: async () => {
 			if (useYarn) {
 				await execa('yarn', ['add', 'tailwind-rn']);
-				await execa('yarn', ['add', '--dev', 'tailwindcss', 'concurrently']);
+				await execa('yarn', [
+					'add',
+					'--dev',
+					'tailwindcss',
+					'postcss',
+					'concurrently'
+				]);
 				return;
 			}
 
@@ -36,6 +42,7 @@ const tasks = new Listr([
 				'install',
 				'--save-dev',
 				'tailwindcss',
+				'postcss',
 				'concurrently'
 			]);
 		}
