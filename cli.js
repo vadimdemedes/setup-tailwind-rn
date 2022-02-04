@@ -21,6 +21,17 @@ meow(
 
 const useYarn = hasYarn();
 
+const tailwindConfig = `
+module.exports = {
+  content: [],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+  corePlugins: require('tailwind-rn/unsupported-core-plugins'),
+}
+`.trimStart();
+
 const tasks = new Listr([
 	{
 		title: 'Install dependencies',
@@ -50,7 +61,7 @@ const tasks = new Listr([
 	{
 		title: 'Create Tailwind config',
 		task: async () => {
-			await execa(useYarn ? 'yarn' : 'npx', ['tailwindcss', 'init']);
+			await fs.default.writeFile('tailwind.config.js', tailwindConfig);
 			await fs.default.writeFile('input.css', '@tailwind utilities;\n');
 			await fs.default.writeFile('tailwind.css', '\n');
 			await fs.default.writeFile('tailwind.json', '{}\n');
