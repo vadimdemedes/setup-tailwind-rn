@@ -23,7 +23,7 @@ const useYarn = hasYarn();
 
 const tailwindConfig = `
 module.exports = {
-  content: [],
+  content: [], // Content configuration: https://tailwindcss.com/docs/content-configuration
   theme: {
     extend: {},
   },
@@ -77,7 +77,8 @@ const tasks = new Listr([
 					'build:tailwind':
 						'tailwindcss --input input.css --output tailwind.css --no-autoprefixer && tailwind-rn',
 					'dev:tailwind':
-						'concurrently "tailwindcss --input input.css --output tailwind.css --no-autoprefixer --watch" "tailwind-rn --watch"'
+						'concurrently "tailwindcss --input input.css --output tailwind.css --no-autoprefixer --watch" "tailwind-rn --watch"',
+					'tailwind-rn': 'tailwind-rn'
 				}
 			});
 
@@ -115,11 +116,15 @@ const summary = [
 	'',
 	`${chalk.cyan(figures.arrowDown)} What's next?`,
 	'',
-	`1. Run ${chalk.bold('tailwind-rn')} in development mode:`,
+	`1. Change the ${chalk.bold("'content'")} section of your ${chalk.bold("'tailwind.config.js'")}.`,
+  '',
+	`More details: ${chalk.cyan(figures.info)} ${chalk.underline('https://tailwindcss.com/docs/content-configuration')}`,
+	'',
+  `2. Run ${chalk.bold('tailwind-rn')} in development mode:`,
 	'',
 	` ${chalk.dim('$')} ${useYarn ? 'yarn' : 'npm run'} dev:tailwind`,
 	'',
-	`2. Import ${chalk.bold('TailwindProvider')} and ${chalk.bold(
+	`3. Import ${chalk.bold('TailwindProvider')} and ${chalk.bold(
 		'tailwind.json'
 	)} in the root of your app`,
 	'',
@@ -130,7 +135,7 @@ const summary = [
 		'from'
 	)} ${chalk.yellow("'./tailwind.json'")};`,
 	'',
-	`3. Wrap the root of your app into ${chalk.bold('TailwindProvider')}:`,
+	`4. Wrap the root of your app into ${chalk.bold('TailwindProvider')}:`,
 	'',
 	` ${chalk.red('<TailwindProvider')} ${chalk.green(
 		'utilities'
@@ -138,7 +143,7 @@ const summary = [
 	`   ${chalk.red('<MyComponent/>')}`,
 	` ${chalk.red('</TailwindProvider>')}`,
 	'',
-	`4. Use Tailwind`,
+	`5. Use Tailwind`,
 	'',
 	` ${chalk.red('import')} {${chalk.green('useTailwind')}} ${chalk.red(
 		'from'
