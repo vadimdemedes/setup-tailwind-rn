@@ -140,6 +140,10 @@ const summary = [
 	'',
 	`4. Use Tailwind`,
 	'',
+	` ${chalk.red('import')} {${chalk.green('Text')}} ${chalk.red(
+		'from'
+	)} ${chalk.yellow("'react-native'")};`,
+	'',
 	` ${chalk.red('import')} {${chalk.green('useTailwind')}} ${chalk.red(
 		'from'
 	)} ${chalk.yellow("'tailwind-rn'")};`,
